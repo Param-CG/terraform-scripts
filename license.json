@@ -1,0 +1,16 @@
+{
+  "license": {
+    "version": 1,
+    "signature": "31a11a1cd58b5b63334b0f6a98f8db3ed4981e074bc74df019c803cc4ca12f9dc35efb723f0a7a1f6a9ab40234cfa1c3b917a8b96dea421b838f399f6f46c5ec",
+    "payload": {
+      "customer": "611b70ba-c1e4-4df3-86de-5aa831138c9d",
+      "license_creation_date": "2021-08-17",
+      "product_subscription": "Kong Enterprise Edition",
+      "support_plan": "Pro",
+      "admin_seats": "Unlimited",
+      "dataplanes": "",
+      "license_expiration_date": "2022-08-17",
+      "license_key": "611b70ba-c1e4-4df3-86de-5aa831138c9d"
+    }
+  }
+}

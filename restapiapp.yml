@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: restapi
+  namespace: default
+  annotations:
+    konghq.com/plugins: rate-limit-ip
+    kubernetes.io/ingress.class: kong
+spec:
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+  selector:
+    app: restapi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: restapi
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: restapi
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: restapi
+        version: v1
+    spec:
+      containers:
+      - image: gcr.io/kong-on-gke-324807/ubuntu-tomcat-image-new:latest
+        imagePullPolicy: Always
+        name: restapi
+        ports:
+        - containerPort: 8080
